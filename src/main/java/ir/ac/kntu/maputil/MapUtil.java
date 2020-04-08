@@ -1,4 +1,4 @@
-package ir.ac.kntu.maputil;
+package main.java.ir.ac.kntu.maputil;
 
 import java.awt.Desktop;
 import java.io.IOException;
