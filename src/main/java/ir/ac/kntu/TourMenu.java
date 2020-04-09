@@ -50,7 +50,7 @@ public class TourMenu {
     public static void printTours(ArrayList<InlandTour> inlandTours,ArrayList<ForeignTour> foreignTours){
         System.out.println("Inland Tours :");
         for (InlandTour inlandTour:inlandTours)
-            System.out.println(inlandTour.getRegion());
+            System.out.println(inlandTour.getRegion()+" Date: "+inlandTour.getStartDate());
         System.out.println("Foreign Tours :");
         for (ForeignTour foreignTour:foreignTours)
             System.out.println(foreignTour.getCountry());
