@@ -12,7 +12,7 @@ public class Maps {
         System.out.println("Enter 4 to see the location of  the tour on a specific day:");
         System.out.println("Enter 5 to see all of the visited cities of a foreign tour:");
         System.out.println("Enter 6 to see a specific city or country:");
-        System.out.println("Enter 6 to see two city in map:");
+        System.out.println("Enter 7 to see two city in map:");
 
         Scanner scanner=new Scanner(System.in);
         int result=scanner.nextInt();
