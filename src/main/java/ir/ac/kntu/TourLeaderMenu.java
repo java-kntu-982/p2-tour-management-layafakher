@@ -31,7 +31,7 @@ public class TourLeaderMenu {
     }
     public static void printTourLeaders(ArrayList<TourLeader> tourLeaders){
         for (TourLeader tourLeader:tourLeaders){
-            System.out.println(tourLeaders);
+            System.out.println(tourLeader);
         }
     }
     public static void addTourLeader(ArrayList<TourLeader> tourLeaders){
