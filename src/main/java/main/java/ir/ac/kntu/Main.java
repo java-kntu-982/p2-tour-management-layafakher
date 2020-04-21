@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
+   public static ArrayList<Client>clients=new ArrayList<>();
     public static void main(String[] args) {
         Place place=new Place("Moscow","Russia");
         Place place1=new Place("Canberra","Australia");
@@ -21,8 +22,6 @@ public class Main {
         Place place11=new Place("Tehran","Iran");
         ArrayList<Place>places=new ArrayList<>();
         places.add(place);places.add(place1);places.add(place2);places.add(place3);places.add(place4);places.add(place5);places.add(place6);places.add(place7);places.add(place8);places.add(place9);places.add(place10);places.add(place11);
-//        ArrayList<String> cities=new ArrayList<>();
-//        cities.add("Shiraz");cities.add("Isfahan");cities.add("Mashhad");cities.add("Tabriz");cities.add("Tehran");
         ArrayList<String>visitedPlaces=new ArrayList<>();
         visitedPlaces.add("Persepolis");visitedPlaces.add("Eram garden");visitedPlaces.add("Tomb of Hafez");visitedPlaces.add("Pasargadae");
         ArrayList<String>strings=new ArrayList<>();
@@ -82,32 +81,5 @@ public class Main {
             if (result1==6)
                 break;
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//        Good for showing one location
-//        MapUtil.showMap("Shiraz");
-//        MapUtil.showMap("@29.6257966,52.5563165,17z");
-////        Good for showing two locations
-//        MapUtil.showMap("Tehran","Dubai");
     }
 }
