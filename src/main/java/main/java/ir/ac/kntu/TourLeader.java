@@ -15,6 +15,10 @@ public class TourLeader extends Person{
     private boolean isMarried;
     private ArrayList<Place> knownPlaces=new ArrayList<>();
 
+    public TourLeader(String userName, String password) {
+        super(userName, password);
+    }
+
     public TourLeader() {
 
     }

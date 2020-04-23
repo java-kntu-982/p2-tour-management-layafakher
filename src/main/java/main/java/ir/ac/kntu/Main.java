@@ -55,10 +55,10 @@ public class Main {
         foreignTours.add(foreignTour);foreignTours.add(foreignTour1);
         Scanner scanner1=new Scanner(System.in);
         while (true){
-            System.out.println("Press 1 to see tour leader menu:");
-            System.out.println("Press 2 to see tours menu:");
-            System.out.println("Press 3 to see Map:");
-            System.out.println("Press 4 to see regions menu:");
+            System.out.println("Press 1 to log in as an Admin:");
+            System.out.println("Press 2 to log in as an employee:");
+            System.out.println("Press 3 to log in as a client:");
+            System.out.println("Press 4 to log in as a tour leader:");
             System.out.println("Press 5 to back to menu:");
             System.out.println("Press 6 to exit:");
 
@@ -66,16 +66,133 @@ public class Main {
             int result1=scanner1.nextInt();
             switch (result1){
                 case 1:
-                    TourLeaderMenu.tourMenu(tourLeaders);
+                    System.out.println("1-Sign in,2-Sign up");
+                    int adminResult=scanner1.nextInt();
+                    if (adminResult==1){
+                        System.out.println("Enter the user name:");
+                        String userName=scanner1.nextLine();
+                        System.out.println("Enter the password:");
+                        String password=scanner1.nextLine();
+                        for (Admin admin:admins){
+                            if (admin.password.equals(password)&&admin.userName.equals(userName)){
+                                admin.getAccess(inlandTours,foreignTours,tourLeaders);
+                            }else {
+                                System.out.println("Admin not found");
+                            }
+
+                        }
+                    }else if (adminResult==2){
+                        System.out.println("Enter admin user name");
+                        String userName=scanner1.nextLine();
+                        System.out.println("Enter admin password");
+                        String password=scanner1.nextLine();
+                        System.out.println("Enter admin phone number");
+                        String phone=scanner1.nextLine();
+                        System.out.println("Enter admin email");
+                        String email=scanner1.nextLine();
+                        Admin admin=new Admin(userName,password);
+                        admin.email=email;
+                        admin.phone=phone;
+                        admins.add(admin);
+                    }
                     break;
                 case 2:
-                    TourMenu.tourMenu(inlandTours,foreignTours,tourLeaders);
+                    System.out.println("1-Sign in,2-Sign up");
+                    int employeeResult=scanner1.nextInt();
+                    if (employeeResult==1){
+                        System.out.println("Enter the user name:");
+                        String userName=scanner1.nextLine();
+                        System.out.println("Enter the password:");
+                        String password=scanner1.nextLine();
+                        for (Employee employee:employees){
+                            if (employee.password.equals(password)&&employee.userName.equals(userName)){
+                                employee.getAccess(inlandTours,foreignTours,tourLeaders);
+                            }else {
+                                System.out.println("Employee not found");
+                            }
+
+                        }
+                    }else if (employeeResult==2){
+                        System.out.println("Enter employee user name");
+                        String userName=scanner1.nextLine();
+                        System.out.println("Enter employee password");
+                        String password=scanner1.nextLine();
+                        System.out.println("Enter employee phone number");
+                        String phone=scanner1.nextLine();
+                        System.out.println("Enter employee email");
+                        String email=scanner1.nextLine();
+                        System.out.println("Enter employment date(year,month,day):");
+                        int year=scanner1.nextInt();
+                        int month=scanner1.nextInt();
+                        int day=scanner1.nextInt();
+                        Date date=new Date(year,month,day);
+                        System.out.println("Enter the base salary:");
+                        int salary=scanner1.nextInt();
+                        Employee employee=new Employee(userName,password,date,salary);
+                        employee.email=email;
+                        employee.phone=phone;
+                    }
                     break;
                 case 3:
-                    Maps.map(inlandTours,foreignTours);
+                    System.out.println("1-Sign in,2-Sign up");
+                    int clientResult=scanner1.nextInt();
+                    if (clientResult==1){
+                        System.out.println("Enter the user name:");
+                        String userName=scanner1.nextLine();
+                        System.out.println("Enter the password:");
+                        String password=scanner1.nextLine();
+                        for (Client client:clients){
+                            if (client.password.equals(password)&&client.userName.equals(userName)){
+                                client.getAccess(inlandTours,foreignTours,tourLeaders);
+                            }else {
+                                System.out.println("Admin not found");
+                            }
+
+                        }
+                    }else if (clientResult==2){
+                        System.out.println("Enter client user name");
+                        String userName=scanner1.nextLine();
+                        System.out.println("Enter client password");
+                        String password=scanner1.nextLine();
+                        System.out.println("Enter client phone number");
+                        String phone=scanner1.nextLine();
+                        System.out.println("Enter client email");
+                        String email=scanner1.nextLine();
+                        Client client=new Client(userName,password);
+                        client.email=email;
+                        client.phone=phone;
+                    }
                     break;
                 case 4:
-                    Regions.region(inlandTours,foreignTours);
+                    System.out.println("1-Sign in,2-Sign up");
+                    int tourleaderResult=scanner1.nextInt();
+                    if (tourleaderResult==1){
+                        System.out.println("Enter the user name:");
+                        String userName=scanner1.nextLine();
+                        System.out.println("Enter the password:");
+                        String password=scanner1.nextLine();
+                        for (TourLeader tourLeader6:tourLeaders){
+                            if (tourLeader6.password.equals(password)&&tourLeader6.userName.equals(userName)){
+                                tourLeader6.getAccess(inlandTours,foreignTours,tourLeaders);
+                            }else {
+                                System.out.println("Admin not found");
+                            }
+
+                        }
+                    }else if (tourleaderResult==2){
+                        System.out.println("Enter client user name");
+                        String userName=scanner1.nextLine();
+                        System.out.println("Enter client password");
+                        String password=scanner1.nextLine();
+                        System.out.println("Enter client phone number");
+                        String phone=scanner1.nextLine();
+                        System.out.println("Enter client email");
+                        String email=scanner1.nextLine();
+                        TourLeader tourLeader7=new TourLeader(userName,password);
+                        tourLeader7.email=email;
+                        tourLeader7.phone=phone;
+                        tourLeaders.add(tourLeader7);
+                    }
                     break;
                 case 5:
                     continue;

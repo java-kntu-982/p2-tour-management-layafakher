@@ -3,6 +3,13 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Admin extends Person{
+    public Admin() {
+    }
+
+    public Admin(String userName, String password) {
+        super(userName, password);
+    }
+
     public void getAccess(ArrayList<InlandTour> inlandTours, ArrayList<ForeignTour> foreignTours, ArrayList<TourLeader>tourLeaders){
         System.out.println("1-See tour menu,2-See tour leaders menu,3-See maps,4-See regions,5-Information part");
         Scanner scanner=new Scanner(System.in);
@@ -26,8 +33,8 @@ public class Admin extends Person{
         }
 
     }
-    public void editInformation(){
-        System.out.println("1-Employee part,2-Client part,3-Tour leader part: ");
+    public void editInformation(ArrayList<TourLeader> tourLeaders){
+        System.out.println("1-Employee part,2-Client part,3-Tour leader part,4-Admin part: ");
         Scanner scanner=new Scanner(System.in);
         int answer=scanner.nextInt();
         if (answer==1){
@@ -114,7 +121,6 @@ public class Admin extends Person{
                         System.out.println("Employee not found:");
                     }
             }
-
         }
     }
         else if (answer==2){
@@ -134,7 +140,74 @@ public class Admin extends Person{
             client.phone=phone;
             Main.clients.add(client);}
             else if (result==2){
+                System.out.println("Enter the user name:");
+                String userName=scanner.nextLine();
+                System.out.println("Enter the password:");
+                String password=scanner.nextLine();
+                for (Client client:Main.clients){
+                    if (client.userName.equals(userName)&&client.password.equals(password)){
+                        Main.clients.remove(client);
+                    }else {
+                        System.out.println("Client not found:");
+                    }
+                }
+            }else if (result==3){
+                System.out.println("Enter the user name:");
+                String userName=scanner.nextLine();
+                System.out.println("Enter the password:");
+                String password=scanner.nextLine();
+                for (Client client:Main.clients){
+                    if (client.userName.equals(userName) && client.password.equals(password)){
+                        System.out.println("1-Edit user name,2-Edit password,3-Edit email address,4-Edit phone number: ");
+                        int result1=scanner.nextInt();
+                        switch (result1){
+                            case 1:
+                                System.out.println("Enter new user name:");
+                                client.userName= scanner.nextLine();
+                                break;
+                            case 2:
+                                System.out.println("Enter your password:");
+                                String oldPass1=scanner.nextLine();
+                                if (oldPass1.equals(client.password)){
+                                    client.password=oldPass1;
+                                }else {
+                                    System.out.println("Wrong password!");
+                                }
+                                break;
+                            case 3:
+                                System.out.println("Enter new email address:");
+                                client.email= scanner.nextLine();
+                                break;
+                            case 4:
+                                System.out.println("Enter new phone number:");
+                                client.phone= scanner.nextLine();
+                                break;
+                        }
+                    }else {
+                        System.out.println("Employee not found:");
+                    }
+                }
 
+            }
+        }
+        else if (answer==3){
+            TourLeaderMenu.editTourLeader(tourLeaders);
+        }
+        else if (answer==4){
+            System.out.println("1-Add an admin,2-Delete an admin,3-Edit an admin:");
+            int result=scanner.nextInt();
+            if (result==1){
+                System.out.println("Enter admin user name");
+                String userName=scanner.nextLine();
+                System.out.println("Enter admin password");
+                String password=scanner.nextLine();
+                System.out.println("Enter admin phone number");
+                String phone=scanner.nextLine();
+                System.out.println("Enter admin email");
+                String email=scanner.nextLine();
+                Admin admin=new Admin(userName,password);
+                admin.email=email;
+                admin.phone=phone;
             }
         }
 }
