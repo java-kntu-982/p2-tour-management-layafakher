@@ -46,19 +46,18 @@ public class Client extends Person{
     public void editInformation(){
         Scanner scanner=new Scanner(System.in);
         System.out.println("First enter your password:");
-        String oldPass=scanner.nextLine();
+        String oldPass=scanner.next();
         if (oldPass.equals(this.password)){
             System.out.println("1-Edit user name,2-Edit password,3-Edit email address,4-Edit phone number: ");
             int result=scanner.nextInt();
             switch (result){
                 case 1:
                     System.out.println("Enter new user name:");
-                    String userName=scanner.nextLine();
-                    this.userName=userName;
+                    this.userName= scanner.next();
                     break;
                 case 2:
                     System.out.println("First enter your password:");
-                    String oldPass1=scanner.nextLine();
+                    String oldPass1=scanner.next();
                     if (oldPass1.equals(this.password)){
                         this.password=oldPass1;
                     }else {
@@ -67,13 +66,11 @@ public class Client extends Person{
                     break;
                 case 3:
                     System.out.println("Enter new email address:");
-                    String email=scanner.nextLine();
-                    this.email=email;
+                    this.email= scanner.next();
                     break;
                 case 4:
                     System.out.println("Enter new phone number:");
-                    String phone=scanner.nextLine();
-                    this.phone=phone;
+                    this.phone= scanner.next();
                     break;
             }
         }else {

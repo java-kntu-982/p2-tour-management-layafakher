@@ -48,37 +48,37 @@ public class Employee extends Person{
                 int answer1=scanner.nextInt();
                 if (answer1==1){
                     System.out.println("Enter client user name");
-                    String userName=scanner.nextLine();
+                    String userName=scanner.next();
                     System.out.println("Enter client password");
-                    String password=scanner.nextLine();
+                    String password=scanner.next();
                     Client client=new Client(userName,password);
                     Main.clients.add(client);
                 }else if (answer1==2){
                     System.out.println("Enter client user name");
-                    String userName=scanner.nextLine();
+                    String userName=scanner.next();
                     System.out.println("Enter client password");
-                    String password=scanner.nextLine();
+                    String password=scanner.next();
                     Client client=new Client(userName,password);
                     Main.clients.remove(client);
                 }
+                break;
         }
     }
     public void editInformation(){
         Scanner scanner=new Scanner(System.in);
         System.out.println("Enter your password:");
-        String oldPass=scanner.nextLine();
+        String oldPass=scanner.next();
         if (oldPass.equals(this.password)){
             System.out.println("1-Edit user name,2-Edit password,3-Edit employment date,4-Edit base salary,5-Edit email address,6-Edit phone number: ");
             int result=scanner.nextInt();
             switch (result){
                 case 1:
                     System.out.println("Enter new user name:");
-                    String userName=scanner.nextLine();
-                    this.userName=userName;
+                    this.userName= scanner.next();
                     break;
                 case 2:
                     System.out.println("Enter your password:");
-                    String oldPass1=scanner.nextLine();
+                    String oldPass1=scanner.next();
                     if (oldPass1.equals(this.password)){
                         this.password=oldPass1;
                     }else {
@@ -90,32 +90,23 @@ public class Employee extends Person{
                     int year=scanner.nextInt();
                     int month=scanner.nextInt();
                     int day=scanner.nextInt();
-                    Date date=new Date(year,month,day);
-                    this.employmentDate=date;
+                    this.employmentDate= new Date(year,month,day);
                     break;
                 case 4:
                     System.out.println("Enter new salary:");
-                    int salary=scanner.nextInt();
-                    this.baseSalary=salary;
+                    this.baseSalary= scanner.nextInt();
                     break;
                 case 5:
                     System.out.println("Enter new email address:");
-                    String email=scanner.nextLine();
-                    this.email=email;
+                    this.email= scanner.next();
                     break;
                 case 6:
                     System.out.println("Enter new phone number:");
-                    String phone=scanner.nextLine();
-                    this.phone=phone;
+                    this.phone= scanner.next();
                     break;
             }
         }else {
             System.out.println("Wrong password!");
         }
     }
-
-
-
-
-
 }

@@ -72,7 +72,6 @@ public class Main {
             System.out.println("Press 5 to back to menu:");
             System.out.println("Press 6 to exit:");
 
-
             int result1=scanner1.nextInt();
             switch (result1){
                 case 1:
@@ -86,10 +85,7 @@ public class Main {
                         for (Admin admin:admins){
                             if (admin.password.equals(password)&&admin.userName.equals(userName1)){
                                 admin.getAccess(inlandTours,foreignTours,tourLeaders);
-                            }else {
-                                System.out.println("Admin not found");
                             }
-
                         }
                     }else if (adminResult==2){
                         System.out.println("Enter admin user name");
@@ -117,15 +113,13 @@ public class Main {
                         for (Employee employee:employees){
                             if (employee.password.equals(password)&&employee.userName.equals(userName)){
                                 employee.getAccess(inlandTours,foreignTours,tourLeaders);
-                            }else {
-                                System.out.println("Employee not found");
                             }
                         }
                     }else if (employeeResult==2){
                         System.out.println("Enter employee user name");
                         String userName=scanner1.next();
                         System.out.println("Enter employee password");
-                        String password=scanner1.nextLine();
+                        String password=scanner1.next();
                         System.out.println("Enter employee phone number");
                         String phone=scanner1.next();
                         System.out.println("Enter employee email");
@@ -153,10 +147,7 @@ public class Main {
                         for (Client client:clients){
                             if (client.password.equals(password)&&client.userName.equals(userName)){
                                 client.getAccess(inlandTours,foreignTours,tourLeaders);
-                            }else {
-                                System.out.println("Admin not found");
                             }
-
                         }
                     }else if (clientResult==2){
                         System.out.println("Enter client user name");
@@ -183,10 +174,7 @@ public class Main {
                         for (TourLeader tourLeader6:tourLeaders){
                             if (tourLeader6.password.equals(password)&&tourLeader6.userName.equals(userName)){
                                 tourLeader6.getAccess(inlandTours,foreignTours,tourLeaders);
-                            }else {
-                                System.out.println("Admin not found");
                             }
-
                         }
                     }else if (tourleaderResult==2){
                         System.out.println("Enter client user name");

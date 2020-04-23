@@ -1,5 +1,6 @@
 package main.java.ir.ac.kntu;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class TourLeaderMenu {
@@ -37,9 +38,9 @@ public class TourLeaderMenu {
     public static void addTourLeader(ArrayList<TourLeader> tourLeaders){
         Scanner in=new Scanner(System.in);
         System.out.println("Enter your first name:");
-        String firstName=in.nextLine();
+        String firstName=in.next();
         System.out.println("Enter your last name:");
-        String lastName=in.nextLine();
+        String lastName=in.next();
         System.out.println("Enter your national code:");
         String nationalCode=in.next();
         System.out.println("Enter your certificate number:");
@@ -58,7 +59,6 @@ public class TourLeaderMenu {
         Date date1=new Date(year2,month2,day2);
         System.out.println("Are you married?(true,false):");
         boolean b= Boolean.parseBoolean(in.next());
-        ArrayList<Place> places=new ArrayList<>();
         String []input=new String[100];
         System.out.println("Enter cities you know:(if you finished press 0)");
         for (int i=0;i<100;i++){
@@ -71,9 +71,7 @@ public class TourLeaderMenu {
         for (int i=0;i<100;i++){
             arr[i].setCityName(input[i]);
         }
-        for (int i=0;i<input.length;i++){
-            places.add(arr[i]);
-        }
+        ArrayList<Place> places = new ArrayList<>(Arrays.asList(arr).subList(0, input.length));
         TourLeader tourLeader=new TourLeader(firstName,lastName,nationalCode,id,age,date,date1,b,places);
         tourLeader.setKnownPlaces(places);
         tourLeaders.add(tourLeader);
@@ -115,7 +113,7 @@ public class TourLeaderMenu {
         switch (ans){
             case 1:
                 System.out.println("Enter the first name:");
-                String f=scanner.nextLine();
+                String f=scanner.next();
                 for (TourLeader tourLeader:tourLeaders){
                     if (tourLeader.getFirstName().equals(f))
                         System.out.println(tourLeader);
@@ -123,7 +121,7 @@ public class TourLeaderMenu {
                 break;
             case 2:
                 System.out.println("Enter the last name:");
-                String l=scanner.nextLine();
+                String l=scanner.next();
                 for (TourLeader tourLeader:tourLeaders){
                     if (tourLeader.getLastName().equals(l))
                         System.out.println(tourLeader);

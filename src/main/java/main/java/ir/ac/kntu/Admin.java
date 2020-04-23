@@ -28,7 +28,7 @@ public class Admin extends Person{
                 Regions.region(inlandTours,foreignTours);
                 break;
             case 5:
-
+                editInformation(tourLeaders);
                 break;
         }
 
@@ -42,9 +42,9 @@ public class Admin extends Person{
             int result=scanner.nextInt();
             if (result==1){
                 System.out.println("Enter the user name:");
-                String userName=scanner.nextLine();
+                String userName=scanner.next();
                 System.out.println("Enter the password:");
-                String password=scanner.nextLine();
+                String password=scanner.next();
                 System.out.println("Enter employment date(year,month,day):");
                 int year=scanner.nextInt();
                 int month=scanner.nextInt();
@@ -53,18 +53,18 @@ public class Admin extends Person{
                 System.out.println("Enter the base salary:");
                 int salary=scanner.nextInt();
                 System.out.println("Enter the phone number:");
-                String phone=scanner.nextLine();
+                String phone=scanner.next();
                 System.out.println("Enter an email:");
-                String email=scanner.nextLine();
+                String email=scanner.next();
                 Employee employee=new Employee(userName,password,date,salary);
                 employee.phone=phone;
                 employee.email=email;
                 Main.employees.add(employee);
             }else if (result==2){
                 System.out.println("Enter the user name:");
-                String userName=scanner.nextLine();
+                String userName=scanner.next();
                 System.out.println("Enter the password:");
-                String password=scanner.nextLine();
+                String password=scanner.next();
                 for (Employee employee:Main.employees){
                     if (employee.userName.equals(userName)&&employee.password.equals(password)){
                         Main.employees.remove(employee);
@@ -74,9 +74,9 @@ public class Admin extends Person{
                 }
             }else if (result==3){
                 System.out.println("Enter the user name:");
-                String userName=scanner.nextLine();
+                String userName=scanner.next();
                 System.out.println("Enter the password:");
-                String password=scanner.nextLine();
+                String password=scanner.next();
                 for (Employee employee:Main.employees){
                     if (employee.userName.equals(userName)&&employee.password.equals(password)){
                         System.out.println("1-Edit user name,2-Edit password,3-Edit employment date,4-Edit base salary,5-Edit email address,6-Edit phone number: ");
@@ -84,11 +84,11 @@ public class Admin extends Person{
                         switch (result1){
                             case 1:
                                 System.out.println("Enter new user name:");
-                                employee.userName= scanner.nextLine();
+                                employee.userName= scanner.next();
                                 break;
                             case 2:
                                 System.out.println("Enter your password:");
-                                String oldPass1=scanner.nextLine();
+                                String oldPass1=scanner.next();
                                 if (oldPass1.equals(employee.password)){
                                     employee.password=oldPass1;
                                 }else {
@@ -128,22 +128,22 @@ public class Admin extends Person{
             int result=scanner.nextInt();
             if (result==1){
             System.out.println("Enter client user name");
-            String userName=scanner.nextLine();
+            String userName=scanner.next();
             System.out.println("Enter client password");
-            String password=scanner.nextLine();
+            String password=scanner.next();
             System.out.println("Enter client phone number");
-            String phone=scanner.nextLine();
+            String phone=scanner.next();
             System.out.println("Enter client email");
-            String email=scanner.nextLine();
+            String email=scanner.next();
             Client client=new Client(userName,password);
             client.email=email;
             client.phone=phone;
             Main.clients.add(client);}
             else if (result==2){
                 System.out.println("Enter the user name:");
-                String userName=scanner.nextLine();
+                String userName=scanner.next();
                 System.out.println("Enter the password:");
-                String password=scanner.nextLine();
+                String password=scanner.next();
                 for (Client client:Main.clients){
                     if (client.userName.equals(userName)&&client.password.equals(password)){
                         Main.clients.remove(client);
@@ -163,7 +163,7 @@ public class Admin extends Person{
                         switch (result1){
                             case 1:
                                 System.out.println("Enter new user name:");
-                                client.userName= scanner.nextLine();
+                                client.userName= scanner.next();
                                 break;
                             case 2:
                                 System.out.println("Enter your password:");
@@ -176,11 +176,11 @@ public class Admin extends Person{
                                 break;
                             case 3:
                                 System.out.println("Enter new email address:");
-                                client.email= scanner.nextLine();
+                                client.email= scanner.next();
                                 break;
                             case 4:
                                 System.out.println("Enter new phone number:");
-                                client.phone= scanner.nextLine();
+                                client.phone= scanner.next();
                                 break;
                         }
                     }else {
@@ -197,22 +197,22 @@ public class Admin extends Person{
             int result=scanner.nextInt();
             if (result==1){
                 System.out.println("Enter admin user name");
-                String userName=scanner.nextLine();
+                String userName=scanner.next();
                 System.out.println("Enter admin password");
-                String password=scanner.nextLine();
+                String password=scanner.next();
                 System.out.println("Enter admin phone number");
-                String phone=scanner.nextLine();
+                String phone=scanner.next();
                 System.out.println("Enter admin email");
-                String email=scanner.nextLine();
+                String email=scanner.next();
                 Admin admin=new Admin(userName,password);
                 admin.email=email;
                 admin.phone=phone;
             }
             else if (result==2){
                 System.out.println("Enter the user name:");
-                String userName=scanner.nextLine();
+                String userName=scanner.next();
                 System.out.println("Enter the password:");
-                String password=scanner.nextLine();
+                String password=scanner.next();
                 for (Admin admin:Main.admins){
                     if (admin.userName.equals(userName) && admin.password.equals(password)){
                         Main.admins.remove(admin);
@@ -223,9 +223,10 @@ public class Admin extends Person{
 
             }else if (result==3){
                 System.out.println("Enter the user name:");
-                String userName=scanner.nextLine();
+                scanner.nextLine();
+                String userName=scanner.next();
                 System.out.println("Enter the password:");
-                String password=scanner.nextLine();
+                String password=scanner.next();
                 for (Admin admin:Main.admins){
                     if (admin.userName.equals(userName) && admin.password.equals(password)){
                         System.out.println("1-Edit user name,2-Edit password,3-Edit email address,4-Edit phone number: ");
@@ -233,37 +234,24 @@ public class Admin extends Person{
                         switch (result1){
                             case 1:
                                 System.out.println("Enter new user name:");
-                                admin.userName= scanner.nextLine();
+                                admin.userName= scanner.next();
                                 break;
                             case 2:
-                                System.out.println("Enter your password:");
-                                String oldPass1=scanner.nextLine();
-                                if (oldPass1.equals(admin.password)){
-                                    admin.password=oldPass1;
-                                }else {
-                                    System.out.println("Wrong password!");
-                                }
+                                System.out.println("Enter the new password:");
+                                admin.password= scanner.next();
                                 break;
                             case 3:
                                 System.out.println("Enter new email address:");
-                                admin.email= scanner.nextLine();
+                                admin.email= scanner.next();
                                 break;
                             case 4:
                                 System.out.println("Enter new phone number:");
-                                admin.phone= scanner.nextLine();
+                                admin.phone= scanner.next();
                                 break;
                         }
-                    }else {
-                        System.out.println("Admin not found:");
                     }
                 }
             }
-
-
-
-
-
-
         }
 }
 }
