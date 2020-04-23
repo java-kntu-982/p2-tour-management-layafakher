@@ -77,10 +77,7 @@ public class TourLeaderMenu {
         TourLeader tourLeader=new TourLeader(firstName,lastName,nationalCode,id,age,date,date1,b,places);
         tourLeader.setKnownPlaces(places);
         tourLeaders.add(tourLeader);
-
-
     }
-
     public static void deleteTourLeader(ArrayList<TourLeader> tourLeaders){
         Scanner inp=new Scanner(System.in);
         System.out.println("Enter your first name:");
@@ -114,8 +111,6 @@ public class TourLeaderMenu {
     }
     public static void editTourLeader(ArrayList<TourLeader> tourLeaders){
     System.out.println("If you want to edit your name press 1,your ");
-
-
     }
     public static void searchForTourLeader(ArrayList<TourLeader> tourLeaders){
         System.out.println("for searching based on first name press 1,last name press 2,age press 3 and places he knows press 4:");
@@ -189,6 +184,5 @@ public class TourLeaderMenu {
                 break;
         }
     }
-
 
 }

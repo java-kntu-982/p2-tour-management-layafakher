@@ -7,7 +7,6 @@ public class Person {
     public String password;
     public String email;
     public String phone;
-
     public Person() {
     }
 
@@ -15,7 +14,7 @@ public class Person {
         this.userName = userName;
         this.password = password;
     }
-    public  void getAccess(ArrayList<InlandTour> inlandTours, ArrayList<ForeignTour> foreignTours){
+    public  void getAccess(ArrayList<InlandTour> inlandTours, ArrayList<ForeignTour> foreignTours,ArrayList<TourLeader>tourLeaders){
 
     }
 

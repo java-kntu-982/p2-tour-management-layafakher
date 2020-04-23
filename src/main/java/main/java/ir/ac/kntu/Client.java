@@ -7,7 +7,7 @@ public class Client extends Person{
     public Client(String userName, String password) {
         super(userName, password);
     }
-
+    @Override
     public void getAccess(ArrayList<InlandTour> inlandTours, ArrayList<ForeignTour> foreignTours, ArrayList<TourLeader> tourLeaders){
         System.out.println("1-See tour menu,2-See tour leader menu,3-See regions menu,4-See map,5-Edit information:");
         Scanner scanner=new Scanner(System.in);
@@ -16,11 +16,17 @@ public class Client extends Person{
             case 1:
                 System.out.println("If you want to see all of The foreign and inland tours press 1:  ");
                 System.out.println("If you want to see all kind of a tour press 2:  ");
+                System.out.println("If you want to search for a tour press 3:  ");
+                System.out.println("If you want to search for a region tour press 4:  ");
                 int result=scanner.nextInt();
                 if (result==1){
                     TourMenu.printTours(inlandTours,foreignTours);
                 }else if (result==2){
                     TourMenu.printAllKindOfATour(inlandTours,foreignTours);
+                }else if (result==3){
+                    TourMenu.tourSearch(inlandTours,foreignTours);
+                }else if (result==4){
+                    TourMenu.regionTourSearch(inlandTours,foreignTours,tourLeaders);
                 }
                 break;
             case 2:
@@ -35,7 +41,6 @@ public class Client extends Person{
             case 5:
                 editInformation();
                 break;
-
         }
     }
     public void editInformation(){

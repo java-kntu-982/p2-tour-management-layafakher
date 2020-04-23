@@ -3,7 +3,6 @@ import main.java.ir.ac.kntu.maputil.MapUtil;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.concurrent.ConcurrentHashMap;
-
 public class Maps {
     public static void map(ArrayList<InlandTour> inlandTours, ArrayList<ForeignTour> foreignTours){
         System.out.println("Enter 1 to see the home position of a tour:");
@@ -13,7 +12,6 @@ public class Maps {
         System.out.println("Enter 5 to see all of the visited cities of a foreign tour:");
         System.out.println("Enter 6 to see a specific city or country:");
         System.out.println("Enter 7 to see two city in map:");
-
         Scanner scanner=new Scanner(System.in);
         int result=scanner.nextInt();
         switch (result){
@@ -23,16 +21,12 @@ public class Maps {
                 for (ForeignTour foreignTour:foreignTours){
                     if (foreignTour.getId().equals(id)){
                         MapUtil.showMap(foreignTour.getHome().getCityName());
-
                     }
-
                 }
                 for (InlandTour inlandTour:inlandTours){
                     if (inlandTour.getId().equals(id)){
                         MapUtil.showMap(inlandTour.getHome().getCityName());
-
                     }
-
                 }
                 break;
             case 2:
@@ -48,9 +42,7 @@ public class Maps {
                 for (InlandTour inlandTour:inlandTours){
                     if (inlandTour.getId().equals(id1)){
                         MapUtil.showMap(inlandTour.getDestination().getCityName());
-
                     }
-
                 }
                 break;
             case 3:
