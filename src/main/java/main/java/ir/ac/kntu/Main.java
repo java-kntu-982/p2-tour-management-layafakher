@@ -80,11 +80,11 @@ public class Main {
                     int adminResult=scanner1.nextInt();
                     if (adminResult==1){
                         System.out.println("Enter the user name:");
-                        String userName=scanner1.nextLine();
+                        String userName1=scanner1.next();
                         System.out.println("Enter the password:");
-                        String password=scanner1.nextLine();
+                        String password=scanner1.next();
                         for (Admin admin:admins){
-                            if (admin.password.equals(password)&&admin.userName.equals(userName)){
+                            if (admin.password.equals(password)&&admin.userName.equals(userName1)){
                                 admin.getAccess(inlandTours,foreignTours,tourLeaders);
                             }else {
                                 System.out.println("Admin not found");
@@ -93,14 +93,14 @@ public class Main {
                         }
                     }else if (adminResult==2){
                         System.out.println("Enter admin user name");
-                        String userName=scanner1.nextLine();
+                        String userName1=scanner1.next();
                         System.out.println("Enter admin password");
-                        String password=scanner1.nextLine();
+                        String password=scanner1.next();
                         System.out.println("Enter admin phone number");
-                        String phone=scanner1.nextLine();
+                        String phone=scanner1.next();
                         System.out.println("Enter admin email");
-                        String email=scanner1.nextLine();
-                        Admin admin=new Admin(userName,password);
+                        String email=scanner1.next();
+                        Admin admin=new Admin(userName1,password);
                         admin.email=email;
                         admin.phone=phone;
                         admins.add(admin);
@@ -111,26 +111,25 @@ public class Main {
                     int employeeResult=scanner1.nextInt();
                     if (employeeResult==1){
                         System.out.println("Enter the user name:");
-                        String userName=scanner1.nextLine();
+                        String userName=scanner1.next();
                         System.out.println("Enter the password:");
-                        String password=scanner1.nextLine();
+                        String password=scanner1.next();
                         for (Employee employee:employees){
                             if (employee.password.equals(password)&&employee.userName.equals(userName)){
                                 employee.getAccess(inlandTours,foreignTours,tourLeaders);
                             }else {
                                 System.out.println("Employee not found");
                             }
-
                         }
                     }else if (employeeResult==2){
                         System.out.println("Enter employee user name");
-                        String userName=scanner1.nextLine();
+                        String userName=scanner1.next();
                         System.out.println("Enter employee password");
                         String password=scanner1.nextLine();
                         System.out.println("Enter employee phone number");
-                        String phone=scanner1.nextLine();
+                        String phone=scanner1.next();
                         System.out.println("Enter employee email");
-                        String email=scanner1.nextLine();
+                        String email=scanner1.next();
                         System.out.println("Enter employment date(year,month,day):");
                         int year=scanner1.nextInt();
                         int month=scanner1.nextInt();
@@ -148,9 +147,9 @@ public class Main {
                     int clientResult=scanner1.nextInt();
                     if (clientResult==1){
                         System.out.println("Enter the user name:");
-                        String userName=scanner1.nextLine();
+                        String userName=scanner1.next();
                         System.out.println("Enter the password:");
-                        String password=scanner1.nextLine();
+                        String password=scanner1.next();
                         for (Client client:clients){
                             if (client.password.equals(password)&&client.userName.equals(userName)){
                                 client.getAccess(inlandTours,foreignTours,tourLeaders);
@@ -161,13 +160,13 @@ public class Main {
                         }
                     }else if (clientResult==2){
                         System.out.println("Enter client user name");
-                        String userName=scanner1.nextLine();
+                        String userName=scanner1.next();
                         System.out.println("Enter client password");
-                        String password=scanner1.nextLine();
+                        String password=scanner1.next();
                         System.out.println("Enter client phone number");
-                        String phone=scanner1.nextLine();
+                        String phone=scanner1.next();
                         System.out.println("Enter client email");
-                        String email=scanner1.nextLine();
+                        String email=scanner1.next();
                         Client client=new Client(userName,password);
                         client.email=email;
                         client.phone=phone;
@@ -178,9 +177,9 @@ public class Main {
                     int tourleaderResult=scanner1.nextInt();
                     if (tourleaderResult==1){
                         System.out.println("Enter the user name:");
-                        String userName=scanner1.nextLine();
+                        String userName=scanner1.next();
                         System.out.println("Enter the password:");
-                        String password=scanner1.nextLine();
+                        String password=scanner1.next();
                         for (TourLeader tourLeader6:tourLeaders){
                             if (tourLeader6.password.equals(password)&&tourLeader6.userName.equals(userName)){
                                 tourLeader6.getAccess(inlandTours,foreignTours,tourLeaders);
@@ -195,9 +194,9 @@ public class Main {
                         System.out.println("Enter client password");
                         String password=scanner1.nextLine();
                         System.out.println("Enter client phone number");
-                        String phone=scanner1.nextLine();
+                        String phone=scanner1.next();
                         System.out.println("Enter client email");
-                        String email=scanner1.nextLine();
+                        String email=scanner1.next();
                         TourLeader tourLeader7=new TourLeader(userName,password);
                         tourLeader7.email=email;
                         tourLeader7.phone=phone;
