@@ -54,6 +54,15 @@ public class Main {
         ForeignTour foreignTour1=new ForeignTour("12",400,new Date(1399,3,11),6,place11,place3,places2,25,170);
         ArrayList<ForeignTour>foreignTours=new ArrayList<>();
         foreignTours.add(foreignTour);foreignTours.add(foreignTour1);
+        Admin admin2=new Admin("laya","1234");
+        Admin admin1=new Admin("ali","1235");
+        admins.add(admin2);admins.add(admin1);
+        Client client2=new Client("leila","1236");
+        Client client1=new Client("parsa","1237");
+        clients.add(client2);clients.add(client1);
+        Employee employee1=new Employee("sara","1238",new Date(1380,10,3),1200);
+        Employee employee2=new Employee("sina","1239",new Date(1380,10,3),1200);
+        employees.add(employee1);employees.add(employee2);
         Scanner scanner1=new Scanner(System.in);
         while (true){
             System.out.println("Press 1 to log in as an Admin:");
