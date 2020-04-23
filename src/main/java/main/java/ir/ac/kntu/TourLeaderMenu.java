@@ -103,11 +103,7 @@ public class TourLeaderMenu {
         System.out.println("Are you married?(true,false):");
         boolean b= Boolean.parseBoolean(inp.next());
         TourLeader tourLeader=new TourLeader(firstName,lastName,nationalCode,id,age,date,date1,b);
-        for (TourLeader tourLeader1:tourLeaders){
-            if (tourLeader.equals(tourLeader1)){
-                tourLeaders.remove(tourLeader1);
-            }
-        }
+        tourLeaders.removeIf(tourLeader::equals);
     }
     public static void editTourLeader(ArrayList<TourLeader> tourLeaders){
     System.out.println("If you want to edit your name press 1,your ");

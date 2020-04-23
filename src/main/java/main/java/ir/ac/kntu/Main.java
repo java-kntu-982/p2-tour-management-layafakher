@@ -9,6 +9,7 @@ public class Main {
     public static ArrayList<Client> clients=new ArrayList<>();
     public static ArrayList<Employee> employees=new ArrayList<>();
     public static ArrayList<Admin> admins=new ArrayList<>();
+
     public static void main(String[] args) {
         Place place=new Place("Moscow","Russia");
         Place place1=new Place("Canberra","Australia");

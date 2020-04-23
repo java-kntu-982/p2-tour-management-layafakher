@@ -187,7 +187,6 @@ public class Admin extends Person{
                         System.out.println("Employee not found:");
                     }
                 }
-
             }
         }
         else if (answer==3){
@@ -209,6 +208,62 @@ public class Admin extends Person{
                 admin.email=email;
                 admin.phone=phone;
             }
+            else if (result==2){
+                System.out.println("Enter the user name:");
+                String userName=scanner.nextLine();
+                System.out.println("Enter the password:");
+                String password=scanner.nextLine();
+                for (Admin admin:Main.admins){
+                    if (admin.userName.equals(userName) && admin.password.equals(password)){
+                        Main.admins.remove(admin);
+                    }else {
+                        System.out.println("Admin not found:");
+                    }
+                }
+
+            }else if (result==3){
+                System.out.println("Enter the user name:");
+                String userName=scanner.nextLine();
+                System.out.println("Enter the password:");
+                String password=scanner.nextLine();
+                for (Admin admin:Main.admins){
+                    if (admin.userName.equals(userName) && admin.password.equals(password)){
+                        System.out.println("1-Edit user name,2-Edit password,3-Edit email address,4-Edit phone number: ");
+                        int result1=scanner.nextInt();
+                        switch (result1){
+                            case 1:
+                                System.out.println("Enter new user name:");
+                                admin.userName= scanner.nextLine();
+                                break;
+                            case 2:
+                                System.out.println("Enter your password:");
+                                String oldPass1=scanner.nextLine();
+                                if (oldPass1.equals(admin.password)){
+                                    admin.password=oldPass1;
+                                }else {
+                                    System.out.println("Wrong password!");
+                                }
+                                break;
+                            case 3:
+                                System.out.println("Enter new email address:");
+                                admin.email= scanner.nextLine();
+                                break;
+                            case 4:
+                                System.out.println("Enter new phone number:");
+                                admin.phone= scanner.nextLine();
+                                break;
+                        }
+                    }else {
+                        System.out.println("Admin not found:");
+                    }
+                }
+            }
+
+
+
+
+
+
         }
 }
 }
